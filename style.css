@@ -58,7 +58,9 @@ body {
   margin: 1px;
   font-size: 30px;
   text-align: center;
+  width: 75px;
   cursor: pointer;
+  height: 75px;
 }
 
 .box-calc .calc .calc-bottom button.black {
@@ -75,10 +77,13 @@ body {
 }
 
 .box-calc .calc .calc-bottom button.button-activ {
+  padding-left: 40px;
+  text-align: left;
   grid-column: 1/3;
   background-color: #333333;
   color: white;
   border-radius: 40px;
+  width: auto;
 }
 .box-calc .calc .calc-bottom button:hover {
   background-color: #898080;
