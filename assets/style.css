@@ -13,7 +13,6 @@ body {
   height: auto;
   flex-direction: column;
   background-color: black;
-
   border-radius: 20px;
   padding: 30px;
   gap: 20px;
@@ -49,14 +48,13 @@ body {
 .box-calc .calc .calc-bottom {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  gap: 10px;
 }
 
 .box-calc .calc .calc-bottom button {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-radius: 50%;
-  padding: 20px;
-  margin: 1px;
   font-size: 30px;
   text-align: center;
   width: 75px;
