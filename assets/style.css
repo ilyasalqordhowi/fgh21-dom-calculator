@@ -13,6 +13,7 @@ body {
   height: auto;
   flex-direction: column;
   background-color: black;
+
   border-radius: 20px;
   padding: 30px;
   gap: 20px;
