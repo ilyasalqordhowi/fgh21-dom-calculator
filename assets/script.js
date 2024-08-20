@@ -15,36 +15,36 @@ Array.from(buttons).forEach((btn) => {
     if (event.currentTarget.textContent === "=") {
       if (display.textContent.includes("+")) {
         const raw = display.textContent.slice(0, -1).split("+");
-        const nums = raw.map((num) => parseInt(num));
+        const nums = raw.map((num) => Number(num));
         let calc = 0;
         nums.forEach((item) => {
           calc += item;
         });
         display.textContent = calc;
-      } else if (display.textContent.includes("-")) {
-        const raw = display.textContent.slice(0, -1).split("-");
-        const nums = raw.map((num) => parseInt(num));
-        display.textContent = nums.reduce((total, minus) => {
-          return total - minus;
-        });
       } else if (display.textContent.includes("÷")) {
         const raw = display.textContent.slice(0, -1).split("÷");
-        const nums = raw.map((num) => parseInt(num));
+        const nums = raw.map((num) => Number(num));
         display.textContent = nums.reduce((total, divide) => {
           return total / divide;
         });
       } else if (display.textContent.includes("×")) {
         const raw = display.textContent.slice(0, -1).split("×");
-        const nums = raw.map((num) => parseInt(num));
+        const nums = raw.map((num) => Number(num));
         display.textContent = nums.reduce((total, times) => {
-          return total * times;
+          return total, times;
         });
       }
       if (display.textContent.includes("%")) {
         const raw = display.textContent.slice(0, -1).split("%");
-        const nums = raw.map((num) => parseInt(num));
+        const nums = raw.map((num) => Number(num));
         display.textContent = nums.reduce((total, parcentage) => {
           return total / 100;
+        });
+      } else if (display.textContent.includes("-")) {
+        const raw = display.textContent.slice(0, -1).split("-");
+        const nums = raw.map((num) => Number(num));
+        display.textContent = nums.reduce((total, minus) => {
+          return total - minus;
         });
       }
     }
@@ -55,9 +55,16 @@ Array.from(buttons).forEach((btn) => {
       const num = display.textContent;
       let konfersi = 0;
       if (display.textContent.includes("-")) {
-        konfersi = -parseInt(num);
+        konfersi = -parseFloat(num);
       }
       display.textContent = konfersi;
     }
   });
 });
+// if (display.textContent.includes("-")) {
+//   konfersi = parseFloat(display.textContent);
+//   if (!isNaN(num)) {
+//     konfersi = -konfersi;
+//     display.textContent = konfersi.toString();
+//   }
+// }
